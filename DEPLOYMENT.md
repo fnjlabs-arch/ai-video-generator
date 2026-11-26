@@ -1,6 +1,6 @@
 # Deployment Guide
 
-This document provides detailed instructions for deploying the AI Video Generator to various platforms.
+This document provides detailed instructions for deploying the VidGen to various platforms.
 
 ## 🚀 Quick Deploy Options
 
@@ -59,7 +59,7 @@ services:
       - "8001:8001"
     environment:
       - MONGO_URL=mongodb://mongo:27017
-      - DB_NAME=ai_video_generator
+      - DB_NAME=vidgen
     depends_on:
       - mongo
     
@@ -133,18 +133,18 @@ docker-compose up --build -d
 
 1. **App Spec Configuration:**
 ```yaml
-name: ai-video-generator
+name: vidgen
 services:
 - name: backend
   github:
-    repo: your-username/ai-video-generator
+    repo: fnjlabs-arch/ai-video-generator
     branch: main
   source_dir: /backend
   run_command: uvicorn server:app --host 0.0.0.0 --port $PORT
   
 - name: frontend
   github:
-    repo: your-username/ai-video-generator
+    repo: fnjlabs-arch/ai-video-generator
     branch: main
   source_dir: /frontend
   build_command: npm run build
@@ -180,7 +180,7 @@ serverless deploy
 **Backend:**
 ```env
 MONGO_URL=mongodb+srv://user:pass@cluster.mongodb.net/
-DB_NAME=ai_video_generator_prod
+DB_NAME=vidgen_prod
 JWT_SECRET=super-secure-production-secret
 STRIPE_SECRET_KEY=sk_live_...
 RUNWAYML_API_KEY=prod_api_key
@@ -303,7 +303,7 @@ jobs:
 ```json
 // In public/manifest.json
 {
-  "name": "AI Video Generator",
+  "name": "VidGen",
   "short_name": "VideoGen",
   "start_url": "/",
   "background_color": "#111827",

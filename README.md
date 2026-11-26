@@ -1,6 +1,8 @@
-# AI Video Generator
+# VidGen
 
 A full-stack web application that converts text prompts or image uploads into AI-generated videos. Built with React, FastAPI, and MongoDB.
+
+> **Current status (honest):** video generation is currently **simulated** — the backend accepts a prompt/image, waits ~3s, and returns a stock sample image as the "video". No real video-generation API (Runway / Pika / Stability) is wired up yet, and there is no auth, no Stripe flow, and no real NSFW handling — the `nsfw_enabled` flag is stored and never acted on. Wiring a real provider is the first Remix step before this can be sold or launched.
 
 ## 🚀 Features
 
@@ -55,7 +57,7 @@ ai-video-generator/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/ai-video-generator.git
+git clone https://github.com/fnjlabs-arch/ai-video-generator.git
 cd ai-video-generator
 ```
 
@@ -76,7 +78,7 @@ pip install -r requirements.txt
 cp .env.example .env
 # Edit .env with your configuration:
 # MONGO_URL=mongodb://localhost:27017
-# DB_NAME=ai_video_generator
+# DB_NAME=vidgen
 # JWT_SECRET=your-secret-key
 # STRIPE_SECRET_KEY=sk_test_...
 # RUNWAYML_API_KEY=your-key
@@ -178,7 +180,7 @@ docker-compose up --build
 ### Backend (.env)
 ```env
 MONGO_URL=mongodb://localhost:27017
-DB_NAME=ai_video_generator
+DB_NAME=vidgen
 JWT_SECRET=your-super-secret-jwt-key
 STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key
 RUNWAYML_API_KEY=your_runwayml_api_key
@@ -287,3 +289,7 @@ For issues and questions:
 ---
 
 **Ready to generate amazing AI videos!** 🎬✨
+
+---
+
+Powered by SadSha

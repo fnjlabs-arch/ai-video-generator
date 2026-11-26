@@ -1,12 +1,12 @@
 # Setup Instructions
 
-Complete guide to set up the AI Video Generator locally or on cloud platforms.
+Complete guide to set up the VidGen locally or on cloud platforms.
 
 ## 🎯 Quick Start (5 Minutes)
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/ai-video-generator.git
+git clone https://github.com/fnjlabs-arch/ai-video-generator.git
 cd ai-video-generator
 
 # 2. Backend setup
@@ -93,7 +93,7 @@ nano .env  # or vim .env or code .env
 ```env
 # Required
 MONGO_URL=mongodb://localhost:27017
-DB_NAME=ai_video_generator
+DB_NAME=vidgen
 
 # Optional (for future features)
 JWT_SECRET=your-secret-key-here
@@ -162,7 +162,7 @@ curl http://localhost:8001/api/styles
 
 ### 3. Frontend Loading
 - Open http://localhost:3000
-- Should see the AI Video Generator interface
+- Should see the VidGen interface
 - Try switching between Text-to-Video and Image-to-Video tabs
 
 ### 4. Full Flow Test
@@ -330,7 +330,7 @@ grep ERROR backend/app.log
 
 1. **Open in Gitpod:**
    - Prefix GitHub URL with `gitpod.io/#/`
-   - Example: `gitpod.io/#/https://github.com/username/ai-video-generator`
+   - Example: `gitpod.io/#/https://github.com/username/vidgen`
 
 2. **Automatic Setup:**
    - Create `.gitpod.yml`:
@@ -442,4 +442,4 @@ if (process.env.REACT_APP_DEBUG) {
 
 ---
 
-**Still having issues? Check our [GitHub Issues](https://github.com/yourusername/ai-video-generator/issues) or create a new one!** 🆘
+**Still having issues? Check our [GitHub Issues](https://github.com/fnjlabs-arch/ai-video-generator/issues) or create a new one!** 🆘

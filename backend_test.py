@@ -6,17 +6,26 @@ import json
 from io import BytesIO
 from PIL import Image
 
-# Get the backend URL from the frontend .env file
-with open('/app/frontend/.env', 'r') as f:
-    for line in f:
-        if line.startswith('REACT_APP_BACKEND_URL='):
-            BACKEND_URL = line.strip().split('=')[1].strip('"\'')
-            break
+# Backend URL: BACKEND_URL env var wins; otherwise read it from the
+# frontend .env file; otherwise fall back to the local dev server.
+BACKEND_URL = os.environ.get("BACKEND_URL")
+if not BACKEND_URL:
+    frontend_env = os.path.join(os.path.dirname(os.path.abspath(__file__)), "frontend", ".env")
+    try:
+        with open(frontend_env, 'r') as f:
+            for line in f:
+                if line.startswith('REACT_APP_BACKEND_URL='):
+                    BACKEND_URL = line.strip().split('=')[1].strip('"\'')
+                    break
+    except FileNotFoundError:
+        pass
+if not BACKEND_URL:
+    BACKEND_URL = "http://localhost:8001"
 
 API_URL = f"{BACKEND_URL}/api"
 
-class AIVideoGeneratorAPITest(unittest.TestCase):
-    """Test suite for the AI Video Generator API"""
+class VidGenAPITest(unittest.TestCase):
+    """Test suite for the VidGen API"""
 
     def setUp(self):
         """Setup before each test"""
@@ -208,6 +217,6 @@ class AIVideoGeneratorAPITest(unittest.TestCase):
         print("✅ Videos gallery test passed")
 
 if __name__ == '__main__':
-    print("🧪 Starting AI Video Generator API Tests")
+    print("🧪 Starting VidGen API Tests")
     unittest.main(argv=['first-arg-is-ignored'], exit=False)
     print("🎉 All API tests completed")

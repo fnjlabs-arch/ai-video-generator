@@ -1,5 +1,5 @@
 {
-  "name": "ai-video-generator",
+  "name": "vidgen",
   "version": "1.0.0",
   "description": "A full-stack web application that converts text prompts or image uploads into AI-generated videos",
   "main": "index.js",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/ai-video-generator.git"
+    "url": "git+https://github.com/fnjlabs-arch/ai-video-generator.git"
   },
   "keywords": [
     "ai",
@@ -32,9 +32,9 @@
   "author": "Your Name",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yourusername/ai-video-generator/issues"
+    "url": "https://github.com/fnjlabs-arch/ai-video-generator/issues"
   },
-  "homepage": "https://github.com/yourusername/ai-video-generator#readme",
+  "homepage": "https://github.com/fnjlabs-arch/ai-video-generator#readme",
   "devDependencies": {
     "concurrently": "^7.6.0"
   },
